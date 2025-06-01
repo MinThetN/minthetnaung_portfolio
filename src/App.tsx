@@ -6,7 +6,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
 import Skills from './pages/Skills';
-import Content from './pages/Content';
+import Content from './pages/Contact';
 
 function App() {
   const location = useLocation();

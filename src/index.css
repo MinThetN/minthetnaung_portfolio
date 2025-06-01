@@ -2,13 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @layer base {
   html {
     @apply scroll-smooth;
   }
   
   body {
-    @apply bg-white text-gray-800 antialiased;
+    @apply bg-white text-gray-800 antialiased m-0 p-0 box-border;
   }
   
   h1 {

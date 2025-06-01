@@ -23,7 +23,7 @@ const Sidebar = () => {
     { path: '/about', label: 'About Me', icon: <User size={20} /> },
     { path: '/projects', label: 'Projects', icon: <Folder size={20} /> },
     { path: '/skills', label: 'Skills', icon: <Code2 size={20} /> },
-    { path: '/content', label: 'Content', icon: <FileText size={20} /> },
+    { path: '/contact', label: 'Contact', icon: <FileText size={20} /> },
   ];
 
   const sidebarVariants = {
