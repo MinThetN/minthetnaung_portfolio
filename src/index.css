@@ -39,7 +39,7 @@
   }
   
   .sidebar-item.active {
-    @apply bg-primary-600 text-white;
+    @apply bg-primary-700 text-white;
   }
   
   .sidebar-item:not(.active) {
@@ -55,11 +55,11 @@
   }
   
   .btn-primary {
-    @apply bg-primary-500 text-white hover:bg-primary-600;
+    @apply bg-primary-700 text-white hover:bg-primary-600;
   }
   
   .btn-outline {
-    @apply border border-primary-500 text-primary-500 hover:bg-primary-50;
+    @apply border border-primary-700 text-primary-700 hover:bg-primary-50;
   }
 
   .section-container {

@@ -1,6 +1,6 @@
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin, Download } from 'lucide-react';
+import { ArrowRight, Github, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
@@ -29,7 +29,7 @@ const Home = () => {
           animate="visible"
         >
           <motion.p 
-            className="text-primary-500 font-medium mb-2"
+            className="text-primary-500 font-semibold font-mono text-xl mb-2"
             variants={itemVariants}
           >
             Hi there, I'm
@@ -38,14 +38,14 @@ const Home = () => {
             className="text-4xl md:text-5xl lg:text-6xl font-bold text-dark-blue-800 mb-4"
             variants={itemVariants}
           >
-            John Doe
+            Min Thet Naung
           </motion.h1>
           <motion.div 
             className="mb-6"
             variants={itemVariants}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
-              Full Stack Developer
+              Frontend | Backend | Ui/UX
             </h2>
           </motion.div>
           <motion.p 
@@ -65,29 +65,54 @@ const Home = () => {
                 View Projects <ArrowRight size={16} />
               </button>
             </Link>
-            <button className="btn btn-outline flex items-center gap-2">
+            {/* <button className="btn btn-outline flex items-center gap-2">
               Download CV <Download size={16} />
-            </button>
+            </button> */}
           </motion.div>
           
+          {/* Social Media Links */}
           <motion.div 
             className="mt-8 flex gap-4 justify-center md:justify-start"
             variants={itemVariants}
           >
-            <a 
-              href="#" 
-              className="text-gray-600 hover:text-primary-500 transition-colors"
-              aria-label="Github"
-            >
-              <Github size={24} />
-            </a>
-            <a 
-              href="#" 
-              className="text-gray-600 hover:text-primary-500 transition-colors"
-              aria-label="LinkedIn"
-            >
-              <Linkedin size={24} />
-            </a>
+            <div className="group relative flex items-center">
+              <a
+                href="https://github.com/MinThetN"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Github"
+                className="flex"
+              >
+                <Github
+                  size={32}
+                  className="w-8 h-8 transition-transform duration-200 group-hover:scale-125 group-hover:stroke-blue-500"
+                />
+              </a>
+              <span className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 origin-left scale-0 px-3 rounded-lg border 
+              border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out 
+              group-hover:scale-100">
+                GitHub
+              </span>
+            </div>
+            <div className="group relative flex items-center">
+              <a 
+                href="https://www.linkedin.com/in/min-thet-naung-31646a269/" 
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                className="flex"
+              >
+                <Linkedin
+                  size={32}
+                  className="w-8 h-8 transition-transform duration-200 group-hover:scale-125 group-hover:stroke-blue-500"
+                />
+              </a>
+              <span className="absolute -top-12 left-1/2 -translate-x-1/2 z-20 origin-left scale-0 px-3 rounded-lg border
+               border-gray-300 bg-white py-2 text-sm font-bold shadow-md transition-all duration-300 ease-in-out 
+               group-hover:scale-100">
+                LinkedIn
+              </span>
+            </div>
           </motion.div>
         </motion.div>
         
