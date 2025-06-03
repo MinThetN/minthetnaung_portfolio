@@ -48,11 +48,13 @@ const Sidebar = () => {
       {/* Profile Section */}
       <div className="mb-8 text-center">
         <div className="inline-block rounded-full bg-primary-500 p-1">
-          <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center text-white">
-            <span className="text-2xl font-bold">JD</span>
-          </div>
+          <img
+            src="images/profile.jpeg"
+            alt="Min Thet Naung profile"
+            className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md cursor-pointer"
+          />
         </div>
-        <h2 className="mt-3 font-bold text-xl">John Doe</h2>
+        <h2 className="mt-3 font-bold text-xl">Min Thet Naung</h2>
         <p className="text-gray-400 text-sm">Full Stack Developer</p>
       </div>
 

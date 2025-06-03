@@ -8,7 +8,7 @@ const skills = {
     { name: 'Next.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
     { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
     { name: 'TypeScript', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg' },
-    { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg' },
+    { name: 'Tailwind CSS', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/Tailwind_CSS_Logo.svg' },
     { name: 'Framer Motion', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/framermotion/framermotion-original.svg' },
   ],
   backend: [
@@ -16,8 +16,6 @@ const skills = {
     { name: 'Prisma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prisma/prisma-original.svg' },
     { name: 'PostgreSQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' },
     { name: 'Next.js API Routes', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg' },
-    { name: 'REST & GraphQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg' },
-    { name: 'JWT Auth', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg' },
   ],
   tools: [
     { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
@@ -38,10 +36,10 @@ const Skills = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 1 }}
           >
             <h3 className="text-xl font-bold text-dark-blue-800 mb-6">Frontend Development</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
               {skills.frontend.map((skill, index) => (
                 <SkillCard key={index} skill={skill} index={index} />
               ))}
@@ -54,7 +52,7 @@ const Skills = () => {
             transition={{ duration: 0.5, delay: 0.1 }}
           >
             <h3 className="text-xl font-bold text-dark-blue-800 mb-6">Backend Development</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
               {skills.backend.map((skill, index) => (
                 <BackendSkillCard key={index} skill={skill} index={index} />
               ))}
@@ -64,10 +62,10 @@ const Skills = () => {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
+            transition={{ duration: 1.5, delay: 0.2 }}
           >
             <h3 className="text-xl font-bold text-dark-blue-800 mb-6">Tools & Platforms</h3>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+            <div className="grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 xl:grid-cols-8 gap-4">
               {skills.tools.map((skill, index) => (
                 <SkillCard key={index} skill={skill} index={index} />
               ))}
@@ -76,23 +74,23 @@ const Skills = () => {
         </div>
 
         <motion.div 
-          className="mt-16 bg-white p-8 rounded-xl shadow-md"
+          className="mt-16 bg-dark-blue-500 p-5 rounded-xl shadow-md"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <h3 className="text-xl font-bold text-dark-blue-800 mb-4">Development Approach</h3>
+          <h3 className="text-xl font-bold text-white mb-4">Development Approach</h3>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h4 className="font-bold text-dark-blue-800 mb-2">Clean Code</h4>
+              <h4 className="font-bold text-primary-700 mb-2">Clean Code</h4>
               <p className="text-gray-600 text-sm">Writing maintainable, efficient, and well-documented code following best practices.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h4 className="font-bold text-dark-blue-800 mb-2">Modern Stack</h4>
+              <h4 className="font-bold text-primary-700 mb-2">Modern Stack</h4>
               <p className="text-gray-600 text-sm">Using the latest technologies and frameworks to build performant applications.</p>
             </div>
             <div className="bg-gray-50 p-6 rounded-lg">
-              <h4 className="font-bold text-dark-blue-800 mb-2">Responsive Design</h4>
+              <h4 className="font-bold text-primary-700 mb-2">Responsive Design</h4>
               <p className="text-gray-600 text-sm">Creating interfaces that work seamlessly across all devices and screen sizes.</p>
             </div>
           </div>
@@ -113,7 +111,8 @@ interface SkillCardProps {
 const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
   return (
     <motion.div 
-      className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-300 flex flex-col items-center"
+      className="bg-white border-b-4 border-gray-300 p-2 rounded-xl shadow-none hover:shadow-xl 
+      transition-shadow duration-300 flex flex-col items-center backdrop-blur-md min-w-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -121,9 +120,9 @@ const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
       <img 
         src={skill.icon} 
         alt={skill.name} 
-        className="w-12 h-12 mb-3"
+        className="w-6 h-6 mb-1"
       />
-      <span className="text-sm font-medium text-dark-blue-800">{skill.name}</span>
+      <span className="text-xs font-medium text-dark-blue-800 text-center break-words">{skill.name}</span>
     </motion.div>
   );
 };
@@ -139,7 +138,7 @@ interface BackendSkillCardProps {
 const BackendSkillCard: React.FC<BackendSkillCardProps> = ({ skill, index }) => {
   return (
     <motion.div 
-      className="bg-white border-b-4 border-gray-300 p-6 rounded-xl shadow-none hover:shadow-lg transition-shadow duration-300 flex flex-col items-center backdrop-blur-md"
+      className="bg-white border-b-4 border-gray-300 p-3 rounded-xl shadow-none hover:shadow-lg transition-shadow duration-300 flex flex-col items-center backdrop-blur-md min-w-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -147,9 +146,9 @@ const BackendSkillCard: React.FC<BackendSkillCardProps> = ({ skill, index }) => 
       <img 
         src={skill.icon} 
         alt={skill.name} 
-        className="w-12 h-12 mb-3"
+        className="w-7 h-7 mb-1"
       />
-      <span className="text-sm font-medium text-dark-blue-800">{skill.name}</span>
+      <span className="text-xs font-medium text-dark-blue-800 text-center break-words">{skill.name}</span>
     </motion.div>
   );
 };
