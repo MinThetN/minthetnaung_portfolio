@@ -10,10 +10,10 @@ const projects = [
     id: 1,
     title: 'E-Commerce Platform',
     category: 'Full Stack',
-    image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    image: '',
     description: 'A complete e-commerce solution with product management, cart functionality, and payment processing.',
-    technologies: ['React', 'Node.js', 'MongoDB', 'Stripe'],
-    link: '#'
+    technologies: ['Nextjs', 'Typescript', 'TailwindCss', 'Sanity', 'Stripe'],
+    link: 'https://fullstack-ecommerce-amber.vercel.app/'
   },
   {
     id: 2,
@@ -21,17 +21,17 @@ const projects = [
     category: 'Full Stack',
     image: 'https://images.pexels.com/photos/6956903/pexels-photo-6956903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     description: 'A modern social networking application built with Next.js , TypeScript, and Prisma. This project features user profiles, posts, notifications, and a responsive UI.',
-    technologies: ['Nextjs', 'Typescript', 'Tailwind CSS', 'ShadCn', 'Prisma', 'Nextjs API Route', 'Clerk'],
+    technologies: ['Nextjs', 'Typescript', 'Tailwind CSS', 'Prisma', 'Clerk'],
     link: 'https://m-social.vercel.app/'
   },
   {
     id: 3,
-    title: 'Financial Dashboard',
+    title: 'To Do List',
     category: 'Frontend',
     image: 'https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     description: 'Interactive dashboard for tracking investments, expenses, and financial goals.',
-    technologies: ['Vue.js', 'D3.js', 'Firebase'],
-    link: '#'
+    technologies: ['React', 'Javascript', 'Tailwind CSS'],
+    link: 'https://todo-list-taupe-xi.vercel.app/'
   },
   {
     id: 4,
@@ -44,12 +44,12 @@ const projects = [
   },
   {
     id: 5,
-    title: 'Weather App',
+    title: '3D Showcase Slider',
     category: 'Frontend',
     image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
     description: 'Weather forecasting application with location-based services and interactive maps.',
-    technologies: ['React', 'OpenWeatherMap API', 'Leaflet'],
-    link: '#'
+    technologies: ['HTML', 'CSS',],
+    link: 'https://3-d-showcase-slider.vercel.app/'
   },
   {
     id: 6,

@@ -1,7 +1,9 @@
 import PageTransition from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { ArrowRight, Github, Linkedin } from 'lucide-react';
+import { Github, Linkedin } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Typewriter } from 'react-simple-typewriter';
+
 
 const Home = () => {
   const containerVariants = {
@@ -45,7 +47,15 @@ const Home = () => {
             variants={itemVariants}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
-              Frontend | Backend | Ui/UX
+            <Typewriter
+                words={['Frontend', 'Backend', 'Ui/UX']}
+                loop={0}
+                cursor
+                cursorStyle="|"
+                typeSpeed={80}
+                deleteSpeed={50}
+                delaySpeed={1200}
+              />
             </h2>
           </motion.div>
           <motion.p 
