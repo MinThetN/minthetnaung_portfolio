@@ -8,7 +8,6 @@ import {
   FileText,
   Github,
   Linkedin,
-  Twitter
 } from 'lucide-react';
 
 const Sidebar = () => {
@@ -47,7 +46,7 @@ const Sidebar = () => {
     <div className="w-64 h-full bg-dark-blue-800 text-white p-5 flex flex-col">
       {/* Profile Section */}
       <div className="mb-8 text-center">
-        <div className="inline-block rounded-full bg-primary-500 p-1">
+        <div className="inline-block rounded-full bg-primary-700 p-1">
           <img
             src="images/profile.jpeg"
             alt="Min Thet Naung profile"
@@ -92,14 +91,11 @@ const Sidebar = () => {
       {/* Social Links */}
       <div className="mt-auto pt-5 border-t border-dark-blue-700">
         <div className="flex justify-center space-x-4">
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
+          <a href="https://github.com/MinThetN" className="text-gray-400 hover:text-white transition-colors">
             <Github size={24} />
           </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
+          <a href="https://www.linkedin.com/in/min-thet-naung-31646a269/" className="text-gray-400 hover:text-white transition-colors">
             <Linkedin size={24} />
-          </a>
-          <a href="#" className="text-gray-400 hover:text-white transition-colors">
-            <Twitter size={24} />
           </a>
         </div>
       </div>

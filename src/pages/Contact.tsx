@@ -11,7 +11,7 @@ const Contact = () => {
           title="Contact Me" 
           subtitle="I'd love to hear from you! Fill out the form below to get in touch."
         />
-        <motion.div 
+        <motion.div
           className="bg-white rounded-xl shadow-lg p-8 w-full max-w-lg flex flex-col items-center"
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}

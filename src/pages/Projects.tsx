@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ExternalLink, Github, ArrowUpRight } from 'lucide-react';
+import { Github, ArrowUpRight } from 'lucide-react';
 
 // Project data
 const projects = [
@@ -17,12 +17,12 @@ const projects = [
   },
   {
     id: 2,
-    title: 'Task Management App',
-    category: 'Frontend',
+    title: 'Mini Social',
+    category: 'Full Stack',
     image: 'https://images.pexels.com/photos/6956903/pexels-photo-6956903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    description: 'A productivity app for managing tasks, projects, and deadlines with drag-and-drop functionality.',
-    technologies: ['React', 'Redux', 'Tailwind CSS'],
-    link: '#'
+    description: 'A modern social networking application built with Next.js , TypeScript, and Prisma. This project features user profiles, posts, notifications, and a responsive UI.',
+    technologies: ['Nextjs', 'Typescript', 'Tailwind CSS', 'ShadCn', 'Prisma', 'Nextjs API Route', 'Clerk'],
+    link: 'https://m-social.vercel.app/'
   },
   {
     id: 3,
@@ -173,13 +173,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               aria-label="View Github Repository"
             >
               <Github size={18} />
-            </a>
-            <a 
-              href={project.link} 
-              className="text-gray-500 hover:text-primary-500 transition-colors"
-              aria-label="Visit Live Project"
-            >
-              <ExternalLink size={18} />
             </a>
           </div>
         </div>
