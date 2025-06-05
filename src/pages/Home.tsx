@@ -47,7 +47,7 @@ const Home = () => {
             variants={itemVariants}
           >
             <h2 className="text-2xl md:text-3xl font-bold text-gray-700">
-            <Typewriter
+            <Typewriter // Typing animation effect
                 words={['Frontend', 'Backend', 'Ui/UX']}
                 loop={0}
                 cursor

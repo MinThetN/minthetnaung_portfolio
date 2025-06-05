@@ -10,17 +10,18 @@ const projects = [
     id: 1,
     title: 'E-Commerce Platform',
     category: 'Full Stack',
-    image: '',
-    description: 'A complete e-commerce solution with product management, cart functionality, and payment processing.',
+    image: 'images/ecommerce.jpeg',
+    description: 'An eCommerce app where users can view products, add them to cart, complete purchases, and enjoy a responsive UI.',
     technologies: ['Nextjs', 'Typescript', 'TailwindCss', 'Sanity', 'Stripe'],
-    link: 'https://fullstack-ecommerce-amber.vercel.app/'
+    link: 'https://fullstack-ecommerce-amber.vercel.app/',
+    gitRepo: 'https://github.com/MinThetN/ecommerce'
   },
   {
     id: 2,
     title: 'Mini Social',
     category: 'Full Stack',
-    image: 'https://images.pexels.com/photos/6956903/pexels-photo-6956903.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    description: 'A modern social networking application built with Next.js , TypeScript, and Prisma. This project features user profiles, posts, notifications, and a responsive UI.',
+    image: 'images/m_social.jpeg',
+    description: 'A social app for posting, reacting, commenting, and profile customization with a responsive UI.',
     technologies: ['Nextjs', 'Typescript', 'Tailwind CSS', 'Prisma', 'Clerk'],
     link: 'https://m-social.vercel.app/'
   },
@@ -28,37 +29,28 @@ const projects = [
     id: 3,
     title: 'To Do List',
     category: 'Frontend',
-    image: 'https://images.pexels.com/photos/6801874/pexels-photo-6801874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    description: 'Interactive dashboard for tracking investments, expenses, and financial goals.',
+    image: 'images/to_do_list.png',
+    description: 'A task management app with day/night themes, letting users create, update, and organize tasks with a clean, responsive UI.',
     technologies: ['React', 'Javascript', 'Tailwind CSS'],
     link: 'https://todo-list-taupe-xi.vercel.app/'
   },
   {
     id: 4,
-    title: 'Social Media API',
-    category: 'Backend',
-    image: 'https://images.pexels.com/photos/7887800/pexels-photo-7887800.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    description: 'RESTful API for a social media platform with authentication, posts, comments, and user profiles.',
-    technologies: ['Node.js', 'Express', 'MongoDB', 'JWT'],
-    link: '#'
-  },
-  {
-    id: 5,
     title: '3D Showcase Slider',
     category: 'Frontend',
-    image: 'https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    description: 'Weather forecasting application with location-based services and interactive maps.',
+    image: 'images/3d_showcase_slider.jpeg',
+    description: 'Interactive 3D carousel to highlight projects with sleek, responsive animations.',
     technologies: ['HTML', 'CSS',],
     link: 'https://3-d-showcase-slider.vercel.app/'
   },
   {
-    id: 6,
-    title: 'Content Management System',
-    category: 'Full Stack',
-    image: 'https://images.pexels.com/photos/5926393/pexels-photo-5926393.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    id: 5,
+    title: 'Memory Game',
+    category: 'Frontend',
+    image: 'images/memory_game.png',
     description: 'Custom CMS for blogs and content websites with markdown support and media management.',
-    technologies: ['Next.js', 'GraphQL', 'PostgreSQL'],
-    link: '#'
+    technologies: ['HTML', 'CSS', 'Javascript'],
+    link: 'https://memory-game-mocha.vercel.app/'
   }
 ];
 
@@ -110,7 +102,13 @@ const Projects = () => {
             transition={{ duration: 0.3 }}
           >
             {filteredProjects.map(project => (
-              <ProjectCard key={project.id} project={project} />
+              <ProjectCard
+                key={project.id}
+                project={{
+                  ...project,
+                  gitRepo: project.gitRepo ?? ''
+                }}
+              />
             ))}
           </motion.div>
         </AnimatePresence>
@@ -128,6 +126,7 @@ interface ProjectCardProps {
     description: string;
     technologies: string[];
     link: string;
+    gitRepo: string;
   };
 }
 
@@ -140,64 +139,81 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
     >
-      <div className="relative overflow-hidden h-48">
+      <div className="relative overflow-hidden h-80">
         <img 
           src={project.image} 
           alt={project.title} 
           className="w-full h-full object-cover transition-transform duration-500"
           style={{ 
-            transform: isHovered ? 'scale(1.05)' : 'scale(1)' 
+            transform: isHovered ? 'scale(1.05)' : 'scale(1)'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-blue-900/70 to-transparent opacity-70" />
+        <motion.div // hover animation
+          className="absolute inset-0 flex items-center justify-center bg-primary-700 text-white text-lg font-bold 
+          opacity-0 transition-opacity duration-300 cursor-pointer select-none"
+          animate={{ opacity: isHovered ? 1 : 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          {/* Hover Text */}
+          <div className="p-5">
+            <div className="flex justify-between items-start mb-2">
+              <h3 className="text-lg font-bold text-white">
+                {project.title}
+              </h3>
+              <div className="flex gap-2">
+                <a 
+                  href={project.gitRepo} 
+                  className="text-white hover:text-primary-500 transition-colors p-2 hover:bg-black rounded-full"
+                  aria-label="View Github Repository"
+                >
+                  <Github size={20} />
+                </a>
+              </div>
+            </div>
+            <p className="text-gray-400 text-sm mb-4">
+              {project.description}
+            </p>
+            <div className="flex flex-wrap gap-2 mb-4">
+              {project.technologies.map((tech, index) => (
+                <span 
+                  key={index} 
+                  className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <a
+          href={project.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute bottom-4 right-4 z-10"
+        >
+            <button
+              className="inline-flex items-center text-white text-sm font-semibold bg-dark-blue-500 
+              hover:bg-white hover:text-black transition-colors px-4 py-2 rounded-full shadow-lg focus:outline-none 
+              focus:ring-2 focus:ring-primary-300 gap-2"
+            >
+              View Project <ArrowUpRight size={16} />
+            </button>
+          </a>
+
+        </motion.div>
+        {/* Category badge */}
         <div className="absolute bottom-4 left-4">
-          <span className="px-2 py-1 bg-primary-500 text-white text-xs rounded-full">
+          <span className="px-2 py-1 bg-dark-blue-500 text-white text-xs rounded-full">
             {project.category}
           </span>
         </div>
-      </div>
-      
-      <div className="p-5">
-        <div className="flex justify-between items-start mb-2">
-          <h3 className="text-lg font-bold text-dark-blue-800">
-            {project.title}
-          </h3>
-          <div className="flex gap-2">
-            <a 
-              href="#" 
-              className="text-gray-500 hover:text-primary-500 transition-colors"
-              aria-label="View Github Repository"
-            >
-              <Github size={18} />
-            </a>
-          </div>
-        </div>
+        {/* View Project Button */}
         
-        <p className="text-gray-600 text-sm mb-4">
-          {project.description}
-        </p>
-        
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.technologies.map((tech, index) => (
-            <span 
-              key={index} 
-              className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full"
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-        
-        <a 
-          href={project.link}
-          className="inline-flex items-center text-primary-500 text-sm font-medium hover:text-primary-600 transition-colors"
-        >
-          View Project <ArrowUpRight size={16} className="ml-1" />
-        </a>
       </div>
     </motion.div>
   );
