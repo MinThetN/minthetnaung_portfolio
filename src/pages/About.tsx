@@ -17,28 +17,28 @@ const About = () => {
           <div className="gallery">
             <figure className="card">
               <img
-                src="https://images.unsplash.com/photo-1704635021570-fd5af2fadf77?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHx0b3BpYy1mZWVkfDJ8Ym84alFLVGFFMFl8fGVufDB8fHx8fA%3D%3D"
+                src="images/img_7.jpg"
                 alt="Lakeview Elegance preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
-                src="https://images.unsplash.com/photo-1704739300067-0cfbf8eb8bd3?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="images/img_5.jpg"
                 alt="Skyline Oasis preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
-                src="https://plus.unsplash.com/premium_photo-1700752855424-525ea0615683?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="images/img_3.jpg"
                 alt="Vista Paradiso preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
-                src="https://plus.unsplash.com/premium_photo-1700590338986-0479436a2596?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="images/img_4.jpg"
                 alt="Villa Verde preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />

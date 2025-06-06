@@ -31,7 +31,7 @@ const Home = () => {
           animate="visible"
         >
           <motion.p 
-            className="text-primary-500 font-semibold font-mono text-xl mb-2"
+            className="text-primary-700 font-semibold font-mono text-xl mb-2"
             variants={itemVariants}
           >
             Hi there, I'm
