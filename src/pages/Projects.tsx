@@ -23,7 +23,8 @@ const projects = [
     image: 'images/m_social.jpeg',
     description: 'A social app for posting, reacting, commenting, and profile customization with a responsive UI.',
     technologies: ['Nextjs', 'Typescript', 'Tailwind CSS', 'Prisma', 'Clerk'],
-    link: 'https://m-social.vercel.app/'
+    link: 'https://m-social.vercel.app/',
+    gitRepo: 'https://github.com/MinThetN/mySocial'
   },
   {
     id: 3,
@@ -32,7 +33,8 @@ const projects = [
     image: 'images/to_do_list.png',
     description: 'A task management app with day/night themes, letting users create, update, and organize tasks with a clean, responsive UI.',
     technologies: ['React', 'Javascript', 'Tailwind CSS'],
-    link: 'https://todo-list-taupe-xi.vercel.app/'
+    link: 'https://todo-list-taupe-xi.vercel.app/',
+    gitRepo: 'https://github.com/MinThetN/todo-list'
   },
   {
     id: 4,
@@ -41,16 +43,18 @@ const projects = [
     image: 'images/3d_showcase_slider.jpeg',
     description: 'Interactive 3D carousel to highlight projects with sleek, responsive animations.',
     technologies: ['HTML', 'CSS',],
-    link: 'https://3-d-showcase-slider.vercel.app/'
+    link: 'https://3-d-showcase-slider.vercel.app/',
+    gitRepo: 'https://github.com/MinThetN/3D_showcase_slider'
   },
   {
     id: 5,
     title: 'Memory Game',
     category: 'Frontend',
     image: 'images/memory_game.png',
-    description: 'Custom CMS for blogs and content websites with markdown support and media management.',
+    description: 'A card game where players press ‘Start’ to begin and try to match pairs of cards within 50 seconds.',
     technologies: ['HTML', 'CSS', 'Javascript'],
-    link: 'https://memory-game-mocha.vercel.app/'
+    link: 'https://memory-game-mocha.vercel.app/',
+    gitRepo: 'https://github.com/MinThetN/memory-game'
   }
 ];
 
@@ -135,7 +139,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   
   return (
     <motion.div 
-      className="rounded-xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl"
+      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
@@ -168,7 +172,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               <div className="flex gap-2">
                 <a 
                   href={project.gitRepo} 
-                  className="text-white hover:text-primary-500 transition-colors p-2 hover:bg-black rounded-full"
+                  className="text-white hover:text-primary-500 transition-colors p-2 hover:bg-black rounded-xl"
                   aria-label="View Github Repository"
                 >
                   <Github size={20} />
@@ -182,7 +186,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               {project.technologies.map((tech, index) => (
                 <span 
                   key={index} 
-                  className="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded-full"
+                  className="text-xs px-2 py-1 bg-gray-200 text-gray-700 rounded-xl"
                 >
                   {tech}
                 </span>

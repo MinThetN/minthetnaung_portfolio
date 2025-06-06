@@ -18,10 +18,10 @@ const Contact = () => {
     if (!form.current) return;
 
     emailjs.sendForm(
-      'YOUR_SERVICE_ID', // replace with your EmailJS service ID
-      'YOUR_TEMPLATE_ID', // replace with your EmailJS template ID
+      'service_lhthb3h',  //  EmailJS service ID
+      'template_92b8sp3', //  EmailJS template ID
       form.current,
-      'YOUR_PUBLIC_KEY' // replace with your EmailJS public key
+      'EqsAG6CV9L0UYa2Gu'   //  EmailJS public key
     )
     .then(
       () => {
@@ -57,7 +57,7 @@ const Contact = () => {
             >
               <label className="block text-gray-700 font-medium mb-1">Name</label>
               <input 
-                name="name"
+                name="user_name"
                 type="text" 
                 className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 
                 focus:ring-primary-200 transition"
@@ -71,7 +71,7 @@ const Contact = () => {
             >
               <label className="block text-gray-700 font-medium mb-1">Email</label>
               <input 
-                name="email"
+                name="user_email"
                 type="email" 
                 className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 
                 focus:ring-primary-200 transition"
@@ -105,7 +105,7 @@ const Contact = () => {
               </button>
             </motion.div>
             {sent && <p className="text-green-600 text-center mt-2">Message sent successfully!</p>}
-            {error && <p className="text-red-600 text-center mt-2">{error}</p>}
+            {error && <p className="text-red-600 text-center mt-2">Failed to sent message. Try again!{error}</p>}
           </form>
         </motion.div>
       </div>

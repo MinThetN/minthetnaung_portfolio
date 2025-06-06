@@ -38,7 +38,7 @@ const About = () => {
               <div className="rounded-lg overflow-hidden shadow-xl">
                 <img 
                   src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                  alt="John Doe working" 
+                  alt="" 
                   className="w-full h-auto object-cover"
                 />
               </div>
@@ -84,29 +84,23 @@ const About = () => {
               variants={itemVariants}
             >
               <div className="flex items-center gap-2">
-                <Calendar size={18} className="text-primary-500" />
+                <Calendar size={18} className="text-primary-700" />
                 <span className="text-gray-700">Born: June 29, 2000</span>
               </div>
               <div className="flex items-center gap-2">
-                <MapPin size={18} className="text-primary-500" />
+                <MapPin size={18} className="text-primary-700" />
                 <span className="text-gray-700">Bangkok, Thailand</span>
               </div>
               <div className="flex items-center gap-2">
-                <Briefcase size={18} className="text-primary-500" />
-                <span className="text-gray-700">Student</span>
+                <GraduationCap size={18} className="text-primary-700" />
+                <span className="text-gray-700">Bachelor of Computer Science</span>
+                <span className='text-primary-700 font-bold'>(2022 - Current)</span>
               </div>
               <div className="flex items-center gap-2">
-                <University size={18} className="text-primary-500" />
+                <University size={18} className="text-primary-700" />
                 <span className="text-gray-700">Assumption University of Thailand</span>
               </div>
-              <div className="flex items-center gap-2">
-                <GraduationCap size={18} className="text-primary-500" />
-                <span className="text-gray-700">BSc Computer Science</span>
-                <span className='text-primary-500 font-bold'>(Current)</span>
-              </div>
-              <div>
-              
-              </div>
+
             </motion.div>
 
           </motion.div>
