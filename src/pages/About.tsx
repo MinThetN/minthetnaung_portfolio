@@ -1,7 +1,7 @@
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, Briefcase, GraduationCap, University } from 'lucide-react';
+import { Calendar, MapPin, GraduationCap, University } from 'lucide-react';
 
 const About = () => {
   const containerVariants = {
@@ -34,24 +34,22 @@ const About = () => {
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.3 }}
           >
-            <div className="relative w-full max-w-md">
-              <div className="rounded-lg overflow-hidden shadow-xl">
-                <img 
-                  src="https://images.pexels.com/photos/4050315/pexels-photo-4050315.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" 
-                  alt="" 
-                  className="w-full h-auto object-cover"
-                />
+            <div className="relative w-full max-w-xs mx-auto">
+              {/* Book 3D effect container */}
+              <div className="book mx-auto">
+                {/* Book cover */}
+                <div className="cover flex items-center justify-center">
+                  <p>hover to see something</p>
+                </div>
+                {/* Book content (image) */}
+                <div className="rounded-lg overflow-hidden shadow-xl">
+                  <img 
+                    src="images/thar_sit.jpeg" 
+                    alt="Profile" 
+                    className="w-full h-auto object-cover"
+                  />
+                </div>
               </div>
-              {/* <motion.div 
-                className="absolute -bottom-5 -right-5 bg-white rounded-lg shadow-lg p-4 w-32 h-32 flex flex-col items-center justify-center border-t-4 border-primary-500"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.3, duration: 0.3 }}
-              >
-                <p className="text-gray-500 text-sm">Experience</p>
-                <p className="text-3xl font-bold text-dark-blue-800">5+</p>
-                <p className="text-gray-500 text-sm">Years</p>
-              </motion.div> */}
             </div>
           </motion.div>
 
