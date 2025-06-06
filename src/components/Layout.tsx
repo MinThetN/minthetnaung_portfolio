@@ -1,6 +1,7 @@
 import React from 'react';
 import Sidebar from './Sidebar';
 import MobileHeader from './MobileHeader';
+import Footer from './Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -36,6 +37,7 @@ const Layout: React.FC<LayoutProps> = ({ children, isMobileMenuOpen, setIsMobile
       {/* Main content */}
       <main className="flex-1 overflow-y-auto">
         {children}
+        <Footer />
       </main>
     </div>
   );
