@@ -23,7 +23,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
             {/* <span className="font-bold text-xl">Min Thet Naung</span> */}
             <div className="inline-block rounded-full bg-primary-500 p-1">
               <img
-                src="images/profile.jpeg"
+                src="/images/profile.jpeg"
                 alt="Min Thet Naung profile"
                 className="w-10 h-10 rounded-full object-cover border-4 border-white shadow-md cursor-pointer"
               />

@@ -17,28 +17,28 @@ const About = () => {
           <div className="gallery">
             <figure className="card">
               <img
-                src="images/img_7.jpg"
+                src="/images/img_7.jpg"
                 alt="Lakeview Elegance preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
-                src="images/img_5.jpg"
+                src="/images/img_5.jpg"
                 alt="Skyline Oasis preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
-                src="images/img_3.jpg"
+                src="/images/img_3.jpg"
                 alt="Vista Paradiso preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
-                src="images/img_4.jpg"
+                src="/images/img_4.jpg"
                 alt="Villa Verde preview"
                 className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
               />
