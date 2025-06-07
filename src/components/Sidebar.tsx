@@ -48,7 +48,7 @@ const Sidebar = () => {
       <div className="mb-8 text-center">
         <div className="inline-block rounded-full bg-primary-700 p-1">
           <img
-            src="images/profile.jpeg"
+            src="/images/profile.jpeg"
             alt="Min Thet Naung profile"
             className="w-20 h-20 rounded-full object-cover border-4 border-white shadow-md cursor-pointer"
           />
