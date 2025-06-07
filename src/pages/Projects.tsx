@@ -205,7 +205,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
               hover:bg-white hover:text-black transition-colors px-4 py-2 rounded-full shadow-lg focus:outline-none 
               focus:ring-2 focus:ring-primary-300 gap-2"
             >
-              View Project <ArrowUpRight size={16} />
+              Live Demo <ArrowUpRight size={16} />
             </button>
           </a>
 
