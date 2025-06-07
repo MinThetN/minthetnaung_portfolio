@@ -104,8 +104,8 @@ const Contact = () => {
                 Send Message <Mail size={18} />
               </button>
             </motion.div>
-            {sent && <p className="text-green-600 text-center mt-2">Message sent successfully!</p>}
-            {error && <p className="text-red-600 text-center mt-2">Failed to sent message. Try again!{error}</p>}
+            {sent && <p className="text-green-600 text-center font-semibold mt-2">Message sent successfully!</p>}
+            {error && <p className="text-red-600 text-center font-semibold mt-2">Failed to sent message. Try again!{error}</p>}
           </form>
         </motion.div>
       </div>

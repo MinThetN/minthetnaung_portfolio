@@ -27,7 +27,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({ title, subtitle }) => {
         </motion.p>
       )}
       <motion.div 
-        className="h-1 w-20 bg-primary-500 mt-2"
+        className="h-1 w-20 bg-primary-700 mt-2"
         initial={{ width: 0 }}
         animate={{ width: 80 }}
         transition={{ duration: 0.5 }}

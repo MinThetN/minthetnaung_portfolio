@@ -74,7 +74,7 @@ const Sidebar = () => {
                 <span>{item.label}</span>
                 {isActive(item.path) && (
                   <motion.div
-                    className="absolute right-0 h-full w-1 bg-primary-400"
+                    className="absolute right-0 h-full w-1 bg-primary-700"
                     layoutId="activeIndicator"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}

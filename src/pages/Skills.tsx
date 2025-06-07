@@ -77,7 +77,7 @@ const Skills = () => {
         </div>
 
         <motion.div 
-          className="mt-16 bg-dark-blue-500 p-5 rounded-xl shadow-md"
+          className="mt-16 bg-primary-700 p-5 rounded-xl shadow-md"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -141,7 +141,8 @@ interface BackendSkillCardProps {
 const BackendSkillCard: React.FC<BackendSkillCardProps> = ({ skill, index }) => {
   return (
     <motion.div 
-      className="bg-white border-b-4 border-gray-300 p-3 rounded-xl shadow-none hover:shadow-lg transition-shadow duration-300 flex flex-col items-center backdrop-blur-md min-w-0"
+      className="bg-white border-b-4 border-gray-300 p-3 rounded-xl shadow-none hover:shadow-lg transition-shadow 
+      duration-300 flex flex-col items-center backdrop-blur-md min-w-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.3, delay: index * 0.1 }}

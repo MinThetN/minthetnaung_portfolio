@@ -87,7 +87,7 @@ const Projects = () => {
               onClick={() => setActiveFilter(category)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeFilter === category 
-                ? 'bg-primary-500 text-white' 
+                ? 'bg-primary-700 text-white' 
                 : 'bg-white text-gray-700 hover:bg-gray-100'
               }`}
             >

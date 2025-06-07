@@ -54,7 +54,7 @@ const About = () => {
           <div className="mb-8">
             <h3 className="text-xl font-bold text-dark-blue-800 mb-3">Who I Am</h3>
             <p className="text-gray-600 mb-4">
-              I am a Computer Science student and a passionate full-stack developer who loves building modern web applications. I enjoy creating clean, user-friendly interfaces and building strong, reliable backends.
+              I am a Computer Science student and a passionate <span className='font-bold'>full-stack developer</span>  who loves building modern web applications. I enjoy creating clean, user-friendly interfaces and building strong, reliable backends.
             </p>
             <p className="text-gray-600 mb-4">
               I am especially excited about making websites that look great on all devices and work smoothly for everyone. I love turning ideas into real-life projects that help people and solve problems.
@@ -68,20 +68,20 @@ const About = () => {
             variants={itemVariants}
           >
             <div className="flex items-center gap-2">
-              <Calendar size={18} className="text-primary-500" />
+              <Calendar size={18} className="text-primary-700" />
               <span className="text-gray-700">Born: June 29, 2000</span>
             </div>
             <div className="flex items-center gap-2">
-              <MapPin size={18} className="text-primary-500" />
+              <MapPin size={18} className="text-primary-700" />
               <span className="text-gray-700">Bangkok, Thailand</span>
             </div>
             <div className="flex items-center gap-2">
-              <University size={18} className="text-primary-500" />
+              <University size={18} className="text-primary-700" />
               <span className="text-gray-700">Assumption University of Thailand</span>
             </div>
             <div className="flex items-center gap-2">
-              <GraduationCap size={18} className="text-primary-500" />
-              <span className="text-gray-700">Bachelor of Computer Science <span className="text-primary-500 font-bold">(2022 - Current)</span></span>
+              <GraduationCap size={18} className="text-primary-700" />
+              <span className="text-gray-700">Bachelor of Computer Science <span className="text-primary-700 font-medium">(2022 - Current)</span></span>
             </div>
           </motion.div>
         </div>
