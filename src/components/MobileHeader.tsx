@@ -20,8 +20,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
           >
-            {/* <span className="font-bold text-xl">Min Thet Naung</span> */}
-            <div className="inline-block rounded-full bg-primary-500 p-1">
+            <div className="inline-block rounded-full bg-primary-700 p-1">
               <img
                 src="/images/profile.jpeg"
                 alt="Min Thet Naung profile"
@@ -34,7 +33,7 @@ const MobileHeader: React.FC<MobileHeaderProps> = ({
       
       <button 
         onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        className="p-2 rounded-lg hover:bg-dark-blue-700 transition-colors"
+        className={`p-2 rounded-lg transition-colors text-primary-700 font-bold ${isMobileMenuOpen ? 'bg-primary-700 text-white' : 'hover:bg-white'}`}
         aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
       >
         {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}

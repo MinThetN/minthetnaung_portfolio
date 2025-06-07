@@ -81,12 +81,18 @@
   left: 0;
   width: 3.5rem;
   border-radius: 5rem;
-  height: 22rem;
+  height: 10rem;
   overflow: hidden;
   transition: flex 0.4s cubic-bezier(0.4,0,0.2,1), border-radius 0.4s cubic-bezier(0.4,0,0.2,1);
   box-shadow: 0 2px 8px rgba(0,0,0,0.10);
   flex: 0.12 1 0;
   margin: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .card {
+    height: 22rem;
+  }
 }
 
 .card img {

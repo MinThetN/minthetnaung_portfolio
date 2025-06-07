@@ -19,28 +19,28 @@ const About = () => {
               <img
                 src="/images/img_7.jpg"
                 alt="Lakeview Elegance preview"
-                className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
                 src="/images/img_5.jpg"
                 alt="Skyline Oasis preview"
-                className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
                 src="/images/img_3.jpg"
                 alt="Vista Paradiso preview"
-                className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
             <figure className="card">
               <img
                 src="/images/img_4.jpg"
                 alt="Villa Verde preview"
-                className="w-full h-full object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </figure>
           </div>
