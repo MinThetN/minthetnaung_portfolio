@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, ArrowUpRight } from 'lucide-react';
+import { Github, ExternalLink } from 'lucide-react';
 
 // Project data
 const projects = [
@@ -158,15 +158,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-blue-900/70 to-transparent opacity-70" />
         <motion.div // hover animation
-          className="absolute inset-0 flex items-center justify-center bg-primary-700 text-white text-lg font-bold 
-          opacity-0 transition-opacity duration-300 cursor-pointer select-none"
+          className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md text-white text-lg font-bold 
+          opacity-0 transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg"
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >
           {/* Hover Text */}
           <div className="p-5">
             <div className="flex justify-between items-start mb-2">
-              <h3 className="text-lg font-bold text-white">
+              <h3 className="text-lg font-bold text-primary-500">
                 {project.title}
               </h3>
               <div className="flex gap-2">
@@ -179,14 +179,14 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                 </a>
               </div>
             </div>
-            <p className="text-gray-400 text-sm mb-4">
+            <p className="text-white text-sm mb-4">
               {project.description}
             </p>
             <div className="flex flex-wrap gap-2 mb-4">
               {project.technologies.map((tech, index) => (
                 <span 
                   key={index} 
-                  className="text-xs px-2 py-1 bg-gray-200 text-gray-700 rounded-xl"
+                  className="text-xs px-2 py-1 bg-primary-700 text-gray-200 rounded-xl"
                 >
                   {tech}
                 </span>
@@ -194,7 +194,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
             </div>
           </div>
 
-          <a
+          
+        </motion.div>
+
+        {/* Category badge */}
+        <div className="absolute bottom-4 left-4">
+          <span className="px-2 py-1 bg-dark-blue-500 text-white text-xs rounded-full">
+            {project.category}
+          </span>
+        </div>
+
+        <a
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
@@ -202,24 +212,15 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         >
             <button
               className="inline-flex items-center text-white text-sm font-semibold bg-dark-blue-500 
-              hover:bg-white hover:text-black transition-colors px-4 py-2 rounded-full shadow-lg focus:outline-none 
+              hover:bg-white hover:text-black transition-colors px-3 py-1 rounded-full shadow-lg focus:outline-none 
               focus:ring-2 focus:ring-primary-300 gap-2"
             >
-              Live Demo <ArrowUpRight size={16} />
+             Live Demo <ExternalLink size={16} />
             </button>
           </a>
-
-        </motion.div>
-        {/* Category badge */}
-        <div className="absolute bottom-4 left-4">
-          <span className="px-2 py-1 bg-dark-blue-500 text-white text-xs rounded-full">
-            {project.category}
-          </span>
-        </div>
-        {/* View Project Button */}
-        
       </div>
     </motion.div>
+    
   );
 };
 
