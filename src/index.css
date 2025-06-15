@@ -43,7 +43,7 @@
   }
   
   .sidebar-item:not(.active) {
-    @apply text-gray-300 hover:bg-dark-blue-700 hover:text-white;
+    @apply text-gray-300 hover:bg-gray-800 hover:text-white;
   }
   
   .card {
