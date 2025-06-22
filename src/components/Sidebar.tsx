@@ -4,7 +4,6 @@ import {
   Home, 
   User, 
   Folder, 
-  Code2, 
   FileText,
   Github,
   Linkedin,
@@ -21,7 +20,7 @@ const Sidebar = () => {
     { path: '/', label: 'Home', icon: <Home size={20} /> },
     { path: '/about', label: 'About Me', icon: <User size={20} /> },
     { path: '/projects', label: 'Projects', icon: <Folder size={20} /> },
-    { path: '/skills', label: 'Expertise', icon: <Code2 size={20} /> },
+    // Remove this line: { path: '/skills', label: 'Expertise', icon: <Code2 size={20} /> },
     { path: '/contact', label: 'Contact', icon: <FileText size={20} /> },
   ];
 
