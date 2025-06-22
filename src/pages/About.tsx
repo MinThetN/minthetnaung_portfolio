@@ -94,19 +94,19 @@ const About = () => {
             variants={itemVariants}
           >
             <div className="flex items-center gap-2">
-              <Calendar size={20} className="text-primary-700" />
+              <Calendar size={35} className="text-primary-700 bg-primary-100 rounded-lg p-2" />
               <span className="text-gray-700 font-semibold">Born: June 29, 2000</span>
             </div>
             <div className="flex items-center gap-2">
-              <MapPin size={20} className="text-primary-700" />
+              <MapPin size={35} className="text-primary-700 bg-primary-100 rounded-lg p-2" />
               <span className="text-gray-700 font-semibold">Bangkok, Thailand</span>
             </div>
             <div className="flex items-center gap-2">
-              <University size={20} className="text-primary-700" />
+              <University size={35} className="text-primary-700 bg-primary-100 rounded-lg p-2" />
               <span className="text-gray-700 font-semibold">Assumption University of Thailand</span>
             </div>
             <div className="flex items-center gap-2">
-              <GraduationCap size={22} className="text-primary-700" />
+              <GraduationCap size={36} className="text-primary-700 bg-primary-100 rounded-lg p-2" />
               <span className="text-gray-700 font-semibold">Bachelor of Computer Science <span className="text-primary-700 font-medium">(2022 - Current)</span></span>
             </div>
           </motion.div>
@@ -119,7 +119,7 @@ const About = () => {
               variants={itemVariants}
             >
               <div className="flex items-start gap-2">
-                <Award size={22} className="text-primary-700 mt-1" />
+                <Award size={35} className="text-primary-700 mt-1 bg-primary-100 rounded-lg p-2" />
                 <div>
                   <span className="text-gray-700 font-semibold">Web Development Foundation <span className="text-primary-700 font-medium">(2023)</span></span>
                   <p className="text-gray-600 text-sm font-medium"><span className='text-5px font-bold text-primary-800'> - </span>Creative Coder Myanmar</p>

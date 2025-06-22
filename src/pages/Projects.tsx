@@ -282,7 +282,7 @@ interface SkillCardProps {
 const SkillCard: React.FC<SkillCardProps> = ({ skill, index }) => {
   return (
     <motion.div 
-      className="bg-white border-b-4 border-gray-300 p-2 rounded-xl shadow-none hover:shadow-xl 
+      className="bg-white border-b-4 border-gray-300 p-2 rounded-xl shadow-none hover:shadow-2xl 
       transition-shadow duration-300 flex flex-col items-center backdrop-blur-md min-w-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
@@ -309,7 +309,7 @@ interface BackendSkillCardProps {
 const BackendSkillCard: React.FC<BackendSkillCardProps> = ({ skill, index }) => {
   return (
     <motion.div 
-      className="bg-white border-b-4 border-gray-300 p-3 rounded-xl shadow-none hover:shadow-lg transition-shadow 
+      className="bg-white border-b-4 border-gray-300 p-3 rounded-xl shadow-none hover:shadow-2xl transition-shadow 
       duration-300 flex flex-col items-center backdrop-blur-md min-w-0"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
