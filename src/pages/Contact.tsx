@@ -42,8 +42,8 @@ const Contact = () => {
     <PageTransition>
       <div className="section-container max-w-4xl mx-auto">
         <SectionHeading 
-          title="Let's Connect" 
-          subtitle="I'd love to hear about your project"
+          title="Get In Touch" 
+          subtitle="I'd love to hear from you"
         />
         
         <div className="grid md:grid-cols-2 gap-8">
