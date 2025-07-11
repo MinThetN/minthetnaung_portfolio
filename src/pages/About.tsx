@@ -50,14 +50,14 @@ const About = () => {
             </motion.figure>
             <motion.figure className="card" variants={imageVariants}>
               <img
-                src="/images/img_5.jpg"
+                src="/images/img_2.jpeg"
                 alt="Skyline Oasis preview"
                 className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
               />
             </motion.figure>
             <motion.figure className="card" variants={imageVariants}>
               <img
-                src="/images/img_3.jpg"
+                src="/images/img_1.jpg"
                 alt="Vista Paradiso preview"
                 className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
               />
