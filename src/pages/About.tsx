@@ -32,41 +32,41 @@ const About = () => {
 
   return (
     <PageTransition>
-      <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      <div className="section-container grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
         {/* Image Gallery Section */}
         <motion.div 
-          className="flex justify-center items-center w-full"
+          className="flex justify-center items-start w-full sticky top-8"
           initial="hidden"
           animate="visible"
           variants={imageContainerVariants}
         >
-          <div className="gallery">
-            <motion.figure className="card" variants={imageVariants}>
+          <div className="gallery relative" style={{ height: '400px' }}>
+            <motion.figure className="card absolute" style={{ left: '0%', top: '0%', width: '70%' }} variants={imageVariants}>
               <img
                 src="/images/img_7.jpg"
                 alt="Lakeview Elegance preview"
-                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-64 object-cover rounded-[2.5rem] transition-all duration-300 shadow-lg"
               />
             </motion.figure>
-            <motion.figure className="card" variants={imageVariants}>
+            <motion.figure className="card absolute" style={{ right: '0%', top: '25%', width: '70%' }} variants={imageVariants}>
               <img
                 src="/images/img_2.jpeg"
                 alt="Skyline Oasis preview"
-                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-64 object-cover rounded-[2.5rem] transition-all duration-300 shadow-lg"
               />
             </motion.figure>
-            <motion.figure className="card" variants={imageVariants}>
+            <motion.figure className="card absolute" style={{ left: '0%', top: '50%', width: '70%' }} variants={imageVariants}>
               <img
                 src="/images/img_1.jpg"
                 alt="Vista Paradiso preview"
-                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-64 object-cover rounded-[2.5rem] transition-all duration-300 shadow-lg"
               />
             </motion.figure>
-            <motion.figure className="card" variants={imageVariants}>
+            <motion.figure className="card absolute" style={{ right: '0%', top: '75%', width: '70%' }} variants={imageVariants}>
               <img
                 src="/images/img_4.jpg"
                 alt="Villa Verde preview"
-                className="w-full h-32 md:h-80 object-cover rounded-[2.5rem] transition-all duration-300"
+                className="w-full h-32 md:h-64 object-cover rounded-[2.5rem] transition-all duration-300 shadow-lg"
               />
             </motion.figure>
           </div>
@@ -123,6 +123,35 @@ const About = () => {
                 <div>
                   <span className="text-gray-700 font-semibold">Web Development Foundation <span className="text-primary-700 font-medium">(2023)</span></span>
                   <p className="text-gray-600 text-sm font-medium"><span className='text-5px font-bold text-primary-800'> - </span>Creative Coder Myanmar</p>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Experiences Section */}
+          <div className='mt-8'>
+            <h3 className='text-xl font-bold text-dark-blue-800 mb-3'>Experiences</h3>
+            <motion.div 
+              className="space-y-3"
+              variants={itemVariants}
+            >
+              <div className="flex items-start gap-4 p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+                <div className="flex-shrink-0">
+                  <img
+                    src="/images/dCode.png"
+                    alt=""
+                    className="w-16 h-16 rounded-full object-cover border-2 border-primary-100"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-dark-blue-800">Web & iOS Developer (Part Time)</h4>
+                  <p className="text-primary-700 font-semibold mb-1">D*Code Research Laboratory</p>
+                  <p className="text-gray-600 text-sm mb-2">June 2025 - Present</p>
+                  <p className="text-gray-600 text-sm">
+                  Collaborated on developing responsive websites for Assumption University, delivering seamless 
+                  performance on all devices. Now focused on building the AU Library iOS app, working with the team 
+                  to craft engaging and user-friendly solutions.
+                  </p>
                 </div>
               </div>
             </motion.div>
