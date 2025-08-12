@@ -168,7 +168,7 @@ const About = () => {
               className="space-y-3"
               variants={itemVariants}
             >
-              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-white rounded-lg shadow-sm border border-gray-100">
+              <div className="flex items-start gap-3 sm:gap-4 p-3 sm:p-4 bg-primary-50 rounded-lg shadow-sm border border-gray-100">
                 <div className="flex-shrink-0">
                   <img
                     src="/images/dCode.png"
@@ -179,7 +179,7 @@ const About = () => {
                 <div className="flex-1 min-w-0">
                   <h4 className="text-dark-blue-800 text-sm sm:text-base font-medium">Web & iOS Developer (Part Time)</h4>
                   <p className="text-primary-700 font-semibold mb-1 text-sm sm:text-base">D*Code Research Laboratory</p>
-                  <p className="text-gray-600 text-xs sm:text-sm mb-2">June 2025 - Present</p>
+                  <p className="text-gray-900 text-xs sm:text-sm mb-2">June 2025 - Present</p>
                   <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
                   Collaborated on developing responsive websites for Assumption University, delivering seamless 
                   performance on all devices. Now focused on building the AU Library iOS app, working with the team 
