@@ -2,7 +2,7 @@ import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { getAllProjects, type Project } from '../data/projects/projectsData';
 import { getAllSkills, type Skill } from '../data/skills/skillsData';
 
@@ -36,13 +36,13 @@ const Projects = () => {
         {/* Skills Section */}
         <div className="mt-16">
           <SectionHeading 
-            title="My Skills" 
+            title="" 
             subtitle="Technologies I work with"
           />
           
           {/* Frontend Skills */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Frontend</h3>
+            <h3 className="text-xl font-semibold mb-6 text-primary">Frontend</h3>
             <motion.div 
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ const Projects = () => {
 
           {/* Backend Skills */}
           <div className="mb-12">
-            <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Backend</h3>
+            <h3 className="text-xl font-semibold mb-6 text-primary">Backend</h3>
             <motion.div 
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -72,7 +72,7 @@ const Projects = () => {
 
           {/* Tools */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 text-gray-800 dark:text-gray-200">Tools & Others</h3>
+            <h3 className="text-xl font-semibold mb-6 text-primary">Tools & Others</h3>
             <motion.div 
               className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-7 gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -96,10 +96,24 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   
-  // Add click handler for mobile devices
-  const handleCardInteraction = () => {
-    setIsHovered(!isHovered);
+  // Detect if device is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
+  // Toggle handler for mobile devices only
+  const handleMobileToggle = (e: React.TouchEvent) => {
+    if (isMobile) {
+      e.preventDefault();
+      setIsHovered(prev => !prev);
+    }
   };
   
   return (
@@ -109,10 +123,9 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      onClick={handleCardInteraction}
-      onTouchStart={handleCardInteraction}
+      onHoverStart={() => !isMobile && setIsHovered(true)}
+      onHoverEnd={() => !isMobile && setIsHovered(false)}
+      onTouchEnd={handleMobileToggle}
     >
       <div className="relative overflow-hidden h-80">
         <img 
