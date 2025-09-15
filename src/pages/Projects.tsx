@@ -97,15 +97,22 @@ interface ProjectCardProps {
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
   
+  // Add click handler for mobile devices
+  const handleCardInteraction = () => {
+    setIsHovered(!isHovered);
+  };
+  
   return (
     <motion.div 
-      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl"
+      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
+      onClick={handleCardInteraction}
+      onTouchStart={handleCardInteraction}
     >
       <div className="relative overflow-hidden h-80">
         <img 
@@ -119,7 +126,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
         <div className="absolute inset-0 bg-gradient-to-t from-dark-blue-900/70 to-transparent opacity-70" />
         <motion.div
           className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md text-white text-lg font-bold 
-          opacity-0 transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg"
+          transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg"
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >
@@ -133,6 +140,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
                   href={project.gitRepo} 
                   className="text-white hover:text-primary-500 transition-colors p-2 hover:bg-black rounded-xl"
                   aria-label="View Github Repository"
+                  onClick={(e) => e.stopPropagation()}
                 >
                   <Github size={20} />
                 </a>
@@ -159,6 +167,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
           target="_blank"
           rel="noopener noreferrer"
           className="absolute bottom-4 right-4 z-10"
+          onClick={(e) => e.stopPropagation()}
         >
             <button
               className="inline-flex items-center text-white text-sm font-semibold bg-dark-blue-500 
