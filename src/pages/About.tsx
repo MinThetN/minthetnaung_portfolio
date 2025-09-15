@@ -81,7 +81,7 @@ const About = () => {
               variants={imageVariants}
             >
               <img
-                src="/images/img_1.jpg"
+                src="/images/img_6.png"
                 alt="Vista Paradiso preview"
                 className="w-full h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 object-cover rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] transition-all duration-300 shadow-lg"
               />
@@ -96,7 +96,7 @@ const About = () => {
               variants={imageVariants}
             >
               <img
-                src="/images/img_4.jpg"
+                src="/images/img_1.jpg"
                 alt="Villa Verde preview"
                 className="w-full h-20 sm:h-24 md:h-32 lg:h-40 xl:h-48 object-cover rounded-[1.5rem] sm:rounded-[2rem] lg:rounded-[2.5rem] transition-all duration-300 shadow-lg"
               />

@@ -27,15 +27,15 @@ export const projects: Project[] = [
     link: 'https://m-social.vercel.app/',
     gitRepo: 'https://github.com/MinThetN/mySocial'
   },
-  {
-    id: 3,
-    title: 'To Do List',
-    image: '/images/to_do_list.png',
-    description: 'A task management app with day/night themes, letting users create, update, and organize tasks with a clean, responsive UI.',
-    technologies: ['React', 'Javascript', 'Tailwind CSS'],
-    link: 'https://todo-list-taupe-xi.vercel.app/',
-    gitRepo: 'https://github.com/MinThetN/todo-list'
-  },
+//   {
+//     id: 3,
+//     title: 'To Do List',
+//     image: '/images/to_do_list.png',
+//     description: 'A task management app with day/night themes, letting users create, update, and organize tasks with a clean, responsive UI.',
+//     technologies: ['React', 'Javascript', 'Tailwind CSS'],
+//     link: 'https://todo-list-taupe-xi.vercel.app/',
+//     gitRepo: 'https://github.com/MinThetN/todo-list'
+//   },
   {
     id: 4,
     title: 'Food Recipes',

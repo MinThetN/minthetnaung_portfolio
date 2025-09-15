@@ -96,50 +96,35 @@ interface ProjectCardProps {
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  
-  // Detect if device is mobile
-  useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768 || 'ontouchstart' in window);
-    };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
-  }, []);
-  
-  // Toggle handler for mobile devices only
-  const handleMobileToggle = (e: React.TouchEvent) => {
-    if (isMobile) {
-      e.preventDefault();
-      setIsHovered(prev => !prev);
-    }
-  };
   
   return (
     <motion.div 
-      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer"
+      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer group"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
-      onHoverStart={() => !isMobile && setIsHovered(true)}
-      onHoverEnd={() => !isMobile && setIsHovered(false)}
-      onTouchEnd={handleMobileToggle}
+      onHoverStart={() => setIsHovered(true)}
+      onHoverEnd={() => setIsHovered(false)}
+      onTouchStart={() => setIsHovered(true)}
+      onTouchEnd={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden h-80">
         <img 
           src={project.image} 
           alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-500"
+          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
           style={{ 
             transform: isHovered ? 'scale(1.05)' : 'scale(1)'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-blue-900/70 to-transparent opacity-70" />
+        
+        {/* Overlay that shows on hover/touch */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md text-white text-lg font-bold 
-          transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg"
+          transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg
+          opacity-0 group-hover:opacity-100 group-active:opacity-100"
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >
