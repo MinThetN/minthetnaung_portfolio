@@ -2,7 +2,7 @@ import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'framer-motion';
 import { Github, ExternalLink } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { getAllProjects, type Project } from '../data/projects/projectsData';
 import { getAllSkills, type Skill } from '../data/skills/skillsData';
 
@@ -99,32 +99,27 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
   
   return (
     <motion.div 
-      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer group"
+      className="rounded-3xl overflow-hidden bg-white shadow-md transition-all duration-300 hover:shadow-xl cursor-pointer"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}
       transition={{ duration: 0.5 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
-      onTouchStart={() => setIsHovered(true)}
-      onTouchEnd={() => setIsHovered(false)}
     >
       <div className="relative overflow-hidden h-80">
         <img 
           src={project.image} 
           alt={project.title} 
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover transition-transform duration-500"
           style={{ 
             transform: isHovered ? 'scale(1.05)' : 'scale(1)'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-dark-blue-900/70 to-transparent opacity-70" />
-        
-        {/* Overlay that shows on hover/touch */}
         <motion.div
           className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-md text-white text-lg font-bold 
-          transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg
-          opacity-0 group-hover:opacity-100 group-active:opacity-100"
+          transition-all duration-300 cursor-pointer select-none border border-white/30 rounded-lg"
           animate={{ opacity: isHovered ? 1 : 0 }}
           transition={{ duration: 0.5 }}
         >

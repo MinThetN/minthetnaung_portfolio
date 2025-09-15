@@ -127,10 +127,6 @@ const About = () => {
             variants={itemVariants}
           >
             <div className="flex items-center gap-2">
-              <Calendar size={35} className="text-primary-700 bg-primary-100 rounded-lg p-2 flex-shrink-0" />
-              <span className="text-gray-700 font-semibold text-sm sm:text-base">Born: June 29, 2000</span>
-            </div>
-            <div className="flex items-center gap-2">
               <MapPin size={35} className="text-primary-700 bg-primary-100 rounded-lg p-2 flex-shrink-0" />
               <span className="text-gray-700 font-semibold text-sm sm:text-base">Bangkok, Thailand</span>
             </div>
@@ -146,16 +142,44 @@ const About = () => {
           
           {/* Certificates Section */}
           <div className="mt-6 lg:mt-8">
-            <h3 className="text-lg sm:text-xl font-bold text-dark-blue-800 mb-3">Certificates</h3>
+            <h3 className="text-lg sm:text-xl font-bold text-dark-blue-800 mb-4">Certificates</h3>
             <motion.div 
-              className="space-y-3"
+              className="grid grid-cols-1 gap-3"
               variants={itemVariants}
             >
-              <div className="flex items-start gap-2">
-                <Award size={35} className="text-primary-700 mt-1 bg-primary-100 rounded-lg p-2 flex-shrink-0" />
-                <div>
-                  <span className="text-gray-700 font-semibold text-sm sm:text-base">Web Development Foundation <span className="text-primary-700 font-medium">(2023)</span></span>
-                  <p className="text-gray-600 text-xs sm:text-sm font-medium"><span className='text-5px font-bold text-primary-800'> - </span>Creative Coder Myanmar</p>
+              {/* Certificate 1 */}
+              <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-md transition-all duration-300">
+                <div className="w-8 h-8 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <img src="/images/coder.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">Web Development Foundation</h4>
+                  <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Creative Coder Myanmar</p>
+                  <p className="text-gray-600 text-xs">2023</p>
+                </div>
+              </div>
+
+              {/* Certificate 2 */}
+              <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-md transition-all duration-300">
+                <div className="w-8 h-8 rounded-lg bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
+                  <img src="/images/aws.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">AWS Cloud Developing</h4>
+                  <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Amazon Web Services</p>
+                  <p className="text-gray-600 text-xs">2025</p>
+                </div>
+              </div>
+
+              {/* Certificate 3 */}
+              <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-md transition-all duration-300">
+                <div className="w-8 h-8 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                  <img src="/images/aws.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+                </div>
+                <div className="flex-1">
+                  <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">Cloud Foundation</h4>
+                  <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Amazon Web Services</p>
+                  <p className="text-gray-600 text-xs">2025</p>
                 </div>
               </div>
             </motion.div>
