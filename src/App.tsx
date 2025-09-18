@@ -5,7 +5,6 @@ import Layout from './components/Layout';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-// Remove this line: import Skills from './pages/Skills';
 import Contact from './pages/Contact';
 
 
@@ -25,7 +24,6 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          {/* Remove this line: <Route path="/skills" element={<Skills />} /> */}
           <Route path="/contact" element={<Contact />} />
         </Routes>
       </AnimatePresence>

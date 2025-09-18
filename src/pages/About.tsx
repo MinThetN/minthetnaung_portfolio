@@ -1,9 +1,26 @@
 import PageTransition from '../components/PageTransition';
 import SectionHeading from '../components/SectionHeading';
 import { motion } from 'framer-motion';
-import { Calendar, MapPin, GraduationCap, University, Award } from 'lucide-react';
-
+import { MapPin, GraduationCap, University, X } from 'lucide-react';
+import { useState } from 'react';
 const About = () => {
+  // Modal state for certificate images
+  const [selectedCertificate, setSelectedCertificate] = useState<{
+    src: string;
+    alt: string;
+    title: string;
+  } | null>(null);
+
+  // Function to open modal
+  const openCertificateModal = (src: string, alt: string, title: string) => {
+    setSelectedCertificate({ src, alt, title });
+  };
+
+  // Function to close modal
+  const closeCertificateModal = () => {
+    setSelectedCertificate(null);
+  };
+
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 }
@@ -144,42 +161,72 @@ const About = () => {
           <div className="mt-6 lg:mt-8">
             <h3 className="text-lg sm:text-xl font-bold text-dark-blue-800 mb-4">Certificates</h3>
             <motion.div 
-              className="grid grid-cols-1 gap-3"
+              className="grid grid-cols-1 gap-4"
               variants={itemVariants}
             >
               {/* Certificate 1 */}
-              <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-md transition-all duration-300">
-                <div className="w-8 h-8 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <img src="/images/coder.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+              <div className="flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-xl transition-all duration-300 bg-white">
+                <div className="flex items-start gap-3 flex-1">
+                  <div className="w-8 h-8 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <img src="/images/coder.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">Web Development Foundation</h4>
+                    <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Creative Coder Myanmar</p>
+                    <p className="text-gray-600 text-xs">2023</p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">Web Development Foundation</h4>
-                  <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Creative Coder Myanmar</p>
-                  <p className="text-gray-600 text-xs">2023</p>
+                <div className="w-full sm:w-32 h-20 sm:h-24 flex-shrink-0">
+                  <img 
+                    src="/images/webDev.jpg" 
+                    alt="Web Development Foundation Certificate" 
+                    className="w-full h-full object-cover rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer hover:scale-105"
+                    onClick={() => openCertificateModal("/images/webDev.jpg", "Web Development Foundation Certificate", "Web Development Foundation")}
+                  />
                 </div>
               </div>
 
               {/* Certificate 2 */}
-              <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-md transition-all duration-300">
-                <div className="w-8 h-8 rounded-lg bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
-                  <img src="/images/aws.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+              <div className="flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-xl transition-all duration-300 bg-white">
+                <div className="flex items-start gap-3 flex-1">
+                  <div className="w-8 h-8 rounded-lg bg-primary-900 flex items-center justify-center flex-shrink-0 mt-1">
+                    <img src="/images/aws.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">AWS Cloud Developing</h4>
+                    <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Amazon Web Services</p>
+                    <p className="text-gray-600 text-xs">2025</p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">AWS Cloud Developing</h4>
-                  <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Amazon Web Services</p>
-                  <p className="text-gray-600 text-xs">2025</p>
+                <div className="w-full sm:w-32 h-20 sm:h-24 flex-shrink-0">
+                  <img 
+                    src="/images/cloudDev.png" 
+                    alt="AWS Cloud Developing Certificate" 
+                    className="w-full h-full object-cover rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer hover:scale-105"
+                    onClick={() => openCertificateModal("/images/cloudDev.png", "AWS Cloud Developing Certificate", "AWS Cloud Developing")}
+                  />
                 </div>
               </div>
 
               {/* Certificate 3 */}
-              <div className="flex items-start gap-3 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-md transition-all duration-300">
-                <div className="w-8 h-8 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
-                  <img src="/images/aws.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+              <div className="flex flex-col sm:flex-row items-start gap-4 p-4 rounded-xl shadow-sm border border-primary-200 hover:shadow-xl transition-all duration-300 bg-white">
+                <div className="flex items-start gap-3 flex-1">
+                  <div className="w-8 h-8 bg-primary-900 rounded-lg flex items-center justify-center flex-shrink-0 mt-1">
+                    <img src="/images/aws.png" alt="Certificate" className="w-6 h-6 rounded object-cover" />
+                  </div>
+                  <div className="flex-1">
+                    <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">AWS Cloud Foundation</h4>
+                    <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Amazon Web Services</p>
+                    <p className="text-gray-600 text-xs">2025</p>
+                  </div>
                 </div>
-                <div className="flex-1">
-                  <h4 className="text-dark-blue-800 font-semibold text-sm sm:text-base">Cloud Foundation</h4>
-                  <p className="text-primary-700 text-xs sm:text-sm font-medium mb-1">Amazon Web Services</p>
-                  <p className="text-gray-600 text-xs">2025</p>
+                <div className="w-full sm:w-32 h-20 sm:h-24 flex-shrink-0">
+                  <img 
+                    src="/images/cloudFoundation.png" 
+                    alt="Cloud Foundation Certificate" 
+                    className="w-full h-full object-cover rounded-lg border border-gray-200 shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer hover:scale-105"
+                    onClick={() => openCertificateModal("/images/cloudFoundation.png", "Cloud Foundation Certificate", "AWS Cloud Foundation")}
+                  />
                 </div>
               </div>
             </motion.div>
@@ -216,6 +263,46 @@ const About = () => {
 
         </div>
       </div>
+
+      {/* Certificate Modal*/}
+      {selectedCertificate && (
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4"
+        onClick={closeCertificateModal}
+      >
+        <motion.div
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
+          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          className="relative max-w-4xl max-h-[90vh] bg-white rounded-lg overflow-hidden shadow-2xl"
+          onClick={(e) => e.stopPropagation()}
+        >
+          {/* Close button */}
+          <button
+            onClick={closeCertificateModal}
+            className="absolute top-4 right-4 z-10 bg-white bg-opacity-90 hover:bg-opacity-100 rounded-full p-2 shadow-lg transition-all duration-200 hover:scale-110"
+          >
+            <X className="w-6 h-6 text-gray-700" />
+          </button>
+
+          {/* Certificate title */}
+          <div className="absolute top-4 left-4 z-10 bg-white bg-opacity-90 rounded-lg px-3 py-2 shadow-lg">
+            <h3 className="text-lg font-semibold text-gray-800">{selectedCertificate.title}</h3>
+          </div>
+
+          {/* Certificate image */}
+          <img
+            src={selectedCertificate.src}
+            alt={selectedCertificate.alt}
+            className="w-full h-full object-contain"
+          />
+        </motion.div>
+      </motion.div>
+      )}
     </PageTransition>
   );
 };
